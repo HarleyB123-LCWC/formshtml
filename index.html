@@ -10,16 +10,23 @@
 <body>
 
     <form action="">
-        <input type="text" placeholder="Enter your name"></input>
+        <input type="text" id="nameinput" placeholder="Enter your name"></input>
         <br />
         <br />
-        <input type="date" value="1990-01-01"></input>
+        <input type="date" id="dateinput"></input>
         <br />
         <br />   
         <input type="email" id="firstemail" placeholder="Enter your email"></input>
         <br />
         <br />
         <input type="email" id="confirmemail" placeholder="Confirm Your Email"></input>
+        <br />
+        <br />
+	<label for="termsandcon">Do you accept the NHS Terms and conditions</label>
+        <fieldset id="termsandcon">
+            <input type="radio" value="Yes" selected="true">Yes</input>
+            <input type="radio" value="No">No</input>
+        </fieldset>
         <br />
         <br />
         <input type="submit" onclick="CheckData()"></input>
