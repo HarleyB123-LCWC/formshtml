@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>email</title>
     <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css"></link>
 </head>
 <body>
 
-    <form action="">
+    <form action="" class="mainform" id="mainform">
         <input type="text" id="nameinput" placeholder="Enter your name"></input>
         <br />
         <br />
@@ -22,13 +23,24 @@
         <input type="email" id="confirmemail" placeholder="Confirm Your Email"></input>
         <br />
         <br />
-	<label for="termsandcon">Do you accept the NHS Terms and conditions</label>
-        <fieldset id="termsandcon">
-            <input type="radio" value="Yes" selected="true">Yes</input>
-            <input type="radio" value="No">No</input>
-        </fieldset>
+        <input type="text" id="allergies" placeholder="Do you have any allergies?" style="width: 500px;"></input>
         <br />
         <br />
+        <input type="text" id="currdocnur" placeholder="Who is your current Doctor or Nurse" style="width: 500px;"  ></input>
+        <br />
+        <br />
+
+        <div class="termsandconditions">
+            <label for="termsandcon">Do you accept the NHS Terms and conditions</label>
+            <br />
+            <br />
+            <input type="radio" value="Yes" id="yestermscon" name="termscon">Yes</input>
+            <input type="radio" value="No" id="notermscon" name="termscon">No</input>
+            <br />
+            <br />
+        </div>
+
+
         <input type="submit" onclick="CheckData()"></input>
 
         <input type="reset"></input>
@@ -36,6 +48,6 @@
         <br />
     </form>
     
-    
+
 </body>
 </html>
