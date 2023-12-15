@@ -68,9 +68,21 @@ function Submit(namee,dob,email,allergies,currentDoctor) {
     csvContent += namee + "," + dob + "," + email + "," + allergies + "," + currentDoctor + "\n";
 
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "save.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    var data = "name=" + name + "&dob=" + dob + "&email=" + email + "&allergies=" + allergies + "&currentDoctor=" + currentDoctor;
-    xhr.send(data);
+
+
+    //var xhr = new XMLHttpRequest();
+    //xhr.open("POST", "./save.php", true);
+    //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //var data = "name=" + name + "&dob=" + dob + "&email=" + email + "&allergies=" + allergies + "&currentDoctor=" + currentDoctor;
+    //xhr.send(data);
+
+    var blob = new Blob([csvContent], { type: 'text/csv' });
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'user_signup.csv';
+
+    // Append the link to the body and trigger the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
