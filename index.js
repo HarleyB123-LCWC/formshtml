@@ -52,6 +52,7 @@ function CheckData() {
 
             if (CheckTime(dateinput)) {
                 alert("Data is all valid")
+                Submit(nameinput,dateinput,firstemail,allergies,currdocnur)
             } else {
                 alert("You cannot set a date in the future")
             }
@@ -62,3 +63,14 @@ function CheckData() {
 
 }
 
+function Submit(namee,dob,email,allergies,currentDoctor) {
+    var csvContent = "Name,DOB,Email,Allergies,Current Doctor/Nurse\n";
+    csvContent += namee + "," + dob + "," + email + "," + allergies + "," + currentDoctor + "\n";
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "save.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    var data = "name=" + name + "&dob=" + dob + "&email=" + email + "&allergies=" + allergies + "&currentDoctor=" + currentDoctor;
+    xhr.send(data);
+}
